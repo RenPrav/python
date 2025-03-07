@@ -1,0 +1,2 @@
+[console_scripts]
+compare-hook = main.main:main

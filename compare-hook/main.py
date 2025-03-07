@@ -79,7 +79,7 @@ def commit_feedback(feedback_text):
     except Exception as e:
         print(f"❌ Git Commit Error: {e}")
 
-if __name__ == "__main__":
+def main():
     repo = git.Repo(repo_path)
     staged_files = repo.git.diff("--cached", "--name-only").splitlines()
 
@@ -98,3 +98,6 @@ if __name__ == "__main__":
 
     commit_feedback(feedback_summary)
     print("feedback is pushed back to the repository.")
+
+if __name__ == "__main__":
+    main()
