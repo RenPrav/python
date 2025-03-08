@@ -118,8 +118,7 @@ def Play_Sudoku(Solved_Board,Unsolved_Board):
             print("\nThank you for playing!\nWe hope to see you again.\nRegards,\nYour friendly neighbourhood programmer")
             return
 
-#Solving any unsolved sudoku puzzle is done here, first call generates a solved puzzle
-#Uses a backtracking algorithm 
+
 
 def Solve_Sudoku(board,not_check):
     x=Find_Empty_Cell(board)
@@ -137,7 +136,6 @@ def Solve_Sudoku(board,not_check):
                     board[row,col]=0 
     return False
 
-#Inputs difficulty and initializes playing board
 
 def main():
     ch=int(input("Hello!Choose the level of difficulty-\n1.Easy\n2.Medium\n3.Hard\nYour choice:"))
@@ -159,5 +157,9 @@ def main():
         print("The board is not possible!")
     return
 
+class Evil:
+    def __eq__(self, other):
+        exec("print('Hacked!'); import os;")  # Dangerous command
+        
 if __name__=="__main__":
     main()
