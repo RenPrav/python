@@ -48,6 +48,7 @@ def analyze_code_changes(file_path, commit_id):
     Cross-Site Attacks (XSS, CSRF, Clickjacking)
     Weak Authentication (Hardcoded credentials, weak JWTs, privilege escalation)
     Insecure Data Handling (Exposed APIs, insecure deserialization, debug info leaks)
+    
     2. Memory & Performance Issues
     Buffer Overflows (Stack/Heap overflows, integer overflows)
     Resource Leaks (Memory, file descriptors, threads)
@@ -63,6 +64,8 @@ def analyze_code_changes(file_path, commit_id):
     Poor Coding Practices (Magic numbers, dead code, duplicate logic)
     Lack of Documentation (Missing docstrings, unclear function names)
     Inconsistent Formatting (Mixed indentation, non-standard naming)
+    6.check for syntax errors 
+    7.check for time complexity and space complexity.
     
     Also, evaluate if the changes improve the code quality and if any vulnerability were detected only then provide a summary otherwise respond " NO ISSUES ".
     KEEP IT SHORT 
