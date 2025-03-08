@@ -144,9 +144,5 @@ def main():
     print("feedback is pushed back to the repository.")
 
 
-class Evil:
-    def __eq__(self, other):
-        exec("print('Hacked!'); import os;")  # Dangerous command
-
 if __name__ == "__main__":
     main()

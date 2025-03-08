@@ -8,3 +8,11 @@ Detected Issue:
 
 -------------------------------------------------------------
 
+**File Path:** pre-commit.py  
+**Commit ID:** a21867b  
+
+**Issue Detected:**  
+The `Evil` class introduces a security vulnerability due to the use of `exec()` with potentially malicious behavior (`print('Hacked!'); import os;`). This poses a critical risk of arbitrary code execution and should be removed or replaced with safe alternatives.
+
+-------------------------------------------------------------
+
