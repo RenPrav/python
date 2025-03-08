@@ -30,11 +30,13 @@ def get_new_version(file_path):
     except FileNotFoundError:
         return []  
 
-def analyze_code_changes(file_path, commit_id):
+def analyze_code_changes(file_path, commit_id, repo):
     old_code = get_previous_version(file_path)
     new_code = get_new_version(file_path)
-
-    diff = ''.join(difflib.unified_diff(old_code, new_code, lineterm=''))
+    repo.git.reset("HEAD", file_path)
+    diff = repo.git.diff("--cached")
+    repo.git.add(file_path)
+    # diff = ''.join(difflib.unified_diff(old_code, new_code, lineterm=''))
     
     print(diff)
 
@@ -103,7 +105,7 @@ def commit_feedback(feedback_text):
         feedback_path = os.path.join(repo_path, feedback_file)
         with open(feedback_path, "a", encoding="utf-8") as f:
             f.write(feedback_text + "\n\n-------------------------------------------------------------\n\n")
-
+        
         repo.git.add(feedback_file)
         print("✅ Feedback committed.")
 
@@ -121,11 +123,11 @@ def main():
     commit_id = repo.head.object.hexsha  
 
     feedback_summary = "\n".join(
-        [analyze_code_changes(file, commit_id) for file in staged_files]
+        [analyze_code_changes(file, commit_id, repo) for file in staged_files]
     )
 
     print("\n=== AI Code Review Feedback ===")
-    # print(feedback_summary)
+    print(feedback_summary)
 
     commit_feedback(feedback_summary)
     print("feedback is pushed back to the repository.")
