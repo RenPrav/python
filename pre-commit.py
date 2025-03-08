@@ -34,8 +34,9 @@ def analyze_code_changes(file_path, commit_id, repo):
     old_code = get_previous_version(file_path)
     new_code = get_new_version(file_path)
     repo.git.reset("HEAD", file_path)
-    diff = repo.git.diff("--cached")
+    diff = repo.git.diff()
     repo.git.add(file_path)
+    print(diff)
     # diff = ''.join(difflib.unified_diff(old_code, new_code, lineterm=''))
     
     print(diff)
