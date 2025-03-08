@@ -40,20 +40,39 @@ def analyze_code_changes(file_path, commit_id):
         return f"✅ No significant changes detected in {file_path}."
 
     prompt = f"""Analyze the following code changes in {file_path} (Commit ID: {commit_id}) and provide concise feedback:
-    
-    ===============================
-    AI Code Review Feedback
-    ===============================
 
-    - File: {file_path}
-      Issues: <issue type 1>, <issue type 2>, ...
-      Suggestions: <brief suggestion 1>, <brief suggestion 2>, ...
-    -------------------------------
+
+    look for the following vulnerabilities :
+        Security Issues
+    Injection Attacks (SQLi, Command Injection, Code Injection)
+    Cross-Site Attacks (XSS, CSRF, Clickjacking)
+    Weak Authentication (Hardcoded credentials, weak JWTs, privilege escalation)
+    Insecure Data Handling (Exposed APIs, insecure deserialization, debug info leaks)
+    2. Memory & Performance Issues
+    Buffer Overflows (Stack/Heap overflows, integer overflows)
+    Resource Leaks (Memory, file descriptors, threads)
+    Denial of Service (DoS) (Infinite loops, ReDoS, resource exhaustion)
+    3. Logic & Best Practices
+    Poor Exception Handling (except Exception: pass, swallowing errors)
+    Race Conditions (TOCTOU, concurrent file access)
+    Weak Cryptography (MD5, SHA1, hardcoded keys, weak randomness)
+    4. Dependency & Configuration Issues
+    Outdated & Vulnerable Dependencies (Unpatched CVEs, missing version pinning)
+    Misconfigured Security Settings (Debug mode enabled, weak CORS, default credentials)
+    5. Maintainability Issues
+    Poor Coding Practices (Magic numbers, dead code, duplicate logic)
+    Lack of Documentation (Missing docstrings, unclear function names)
+    Inconsistent Formatting (Mixed indentation, non-standard naming)
     
+    Also, evaluate if the changes improve the code quality and if any vulnerability were detected only then provide a summary otherwise respond " NO ISSUES ".
+    KEEP IT SHORT 
+    
+    - File: {file_path}
+        
     Code Diff:
     {diff}
-
-    Also, evaluate if the changes improve the code quality and provide a summary.
+    
+    
     """
 
     response = client.chat.completions.create(
@@ -69,8 +88,8 @@ def commit_feedback(feedback_text):
         current_branch = repo.active_branch.name
 
         feedback_path = os.path.join(repo_path, feedback_file)
-        with open(feedback_path, "w", encoding="utf-8") as f:
-            f.write(feedback_text)
+        with open(feedback_path, "a", encoding="utf-8") as f:
+            f.write(feedback_text + "\n\n")
 
         repo.git.add(feedback_file)
         print("✅ Feedback committed.")

@@ -25,4 +25,18 @@ To improve this script:
 - Correct the variable name error immediately.
 - Modularize the code for enhanced clarity and maintainability.
 - Add proper input validation to avoid runtime issues.
-```
+```**VULNERABILITIES DETECTED:**
+
+1. **Security Issues:**
+   - **Code Injection**: The addition of the `exec()` function is highly dangerous. It can execute arbitrary code if the program is exposed to untrusted input, leading to serious vulnerabilities including remote code execution.
+
+2. **Logic & Best Practices:**
+   - **Poor Input Handling**: No validation or sanitization is performed on the user input (`input()`), making the program susceptible to malicious or incorrect input.
+   - **Poor Exception Handling**: The code does not handle cases where the input cannot be converted to an integer, which could lead to runtime errors.
+
+---
+
+**SUMMARY:**  
+The introduction of `exec()` introduces a critical Code Injection vulnerability. Additionally, there is poor input handling, which impacts reliability. The changes worsen the code quality. Immediate removal of `exec()` is highly recommended.
+NO ISSUES
+
