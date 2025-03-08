@@ -4,7 +4,7 @@ import os
 from openai import AzureOpenAI
 
 repo_path = os.path.dirname(os.path.abspath(__file__))
-feedback_file = "feedback.txt"
+feedback_file = "feedback.md"
 
 SECRET_KEY = os.environ.get('AZURE_KEY')
 endpoint = os.environ.get('END_POINT')
