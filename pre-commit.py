@@ -43,7 +43,8 @@ def analyze_code_changes(file_path, commit_id):
 
 
     look for the following vulnerabilities :
-        Security Issues
+    
+    1.Security Issues
     Injection Attacks (SQLi, Command Injection, Code Injection)
     Cross-Site Attacks (XSS, CSRF, Clickjacking)
     Weak Authentication (Hardcoded credentials, weak JWTs, privilege escalation)
@@ -53,18 +54,23 @@ def analyze_code_changes(file_path, commit_id):
     Buffer Overflows (Stack/Heap overflows, integer overflows)
     Resource Leaks (Memory, file descriptors, threads)
     Denial of Service (DoS) (Infinite loops, ReDoS, resource exhaustion)
+    
     3. Logic & Best Practices
     Poor Exception Handling (except Exception: pass, swallowing errors)
     Race Conditions (TOCTOU, concurrent file access)
     Weak Cryptography (MD5, SHA1, hardcoded keys, weak randomness)
+    
     4. Dependency & Configuration Issues
     Outdated & Vulnerable Dependencies (Unpatched CVEs, missing version pinning)
     Misconfigured Security Settings (Debug mode enabled, weak CORS, default credentials)
+    
     5. Maintainability Issues
     Poor Coding Practices (Magic numbers, dead code, duplicate logic)
     Lack of Documentation (Missing docstrings, unclear function names)
     Inconsistent Formatting (Mixed indentation, non-standard naming)
+    
     6.check for syntax errors 
+    
     7.check for time complexity and space complexity.
     
     Also, evaluate if the changes improve the code quality and if any vulnerability were detected only then provide a summary otherwise respond " NO ISSUES ".
@@ -75,7 +81,7 @@ def analyze_code_changes(file_path, commit_id):
     Code Diff:
     {diff}
     
-    
+    provide the details with the file name,commit id,issues and suggestion in a structured and short format.
     """
 
     response = client.chat.completions.create(
