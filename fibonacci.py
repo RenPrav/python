@@ -5,6 +5,6 @@ def fibonacci(n):
         a, b = b, a + b
 
 n = int(input("Enter the number of terms: "))
-fibonacci(n)
+fibonacci(mn)
 
 
