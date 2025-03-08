@@ -158,9 +158,5 @@ def main():
     return
 
 
-class Evil:
-    def __eq__(self, other):
-        exec("print('Hacked!'); import os;")  # Dangerous command
-        
 if __name__=="__main__":
     main()
