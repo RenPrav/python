@@ -6,4 +6,4 @@ def fibonacci(n):
 
 n = int(input("Enter the number of terms: "))
 fibonacci(n)
-
+sdkfsd
