@@ -7,3 +7,10 @@ The commit introduces a **security vulnerability** by using `exec()` in the `__e
 
 -------------------------------------------------------------
 
+**File Path:** pre-commit.py  
+**Commit ID:** 695028f  
+
+Detected Issue: The `Evil.__eq__` method uses `exec` with hardcoded malicious code (`exec("print('Hacked!'); import os;")`), which introduces a severe security vulnerability by allowing arbitrary code execution. Methods like `exec` should be avoided due to their risk of abuse. Remove or refactor for security and best practices.
+
+-------------------------------------------------------------
+
