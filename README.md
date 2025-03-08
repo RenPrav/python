@@ -1,10 +1,10 @@
-`GitSense: AI-Powered Code Review Assistant`   ![image](https://github.com/user-attachments/assets/7dd8186e-ab12-4d49-ba25-196c87176363)
+**`GitSense: AI-Powered Code Review Assistant`**   ![image](https://github.com/user-attachments/assets/7dd8186e-ab12-4d49-ba25-196c87176363)
 
 **`Overview`**
 
 This pre-commit hook automatically analyzes staged files before they are committed. It checks for security vulnerabilities, performance issues, and logical inconsistencies using AI-powered analysis.
 
-**Workflow**
+**`Workflow`**
 
 Check for Staged Files – If no files are staged, the hook exits.
 
