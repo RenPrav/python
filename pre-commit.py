@@ -36,11 +36,6 @@ def analyze_code_changes(file_path, commit_id, repo):
     repo.git.reset("HEAD", file_path)
     diff = repo.git.diff()
     repo.git.add(file_path)
-    print(diff)
-    # diff = ''.join(difflib.unified_diff(old_code, new_code, lineterm=''))
-    
-    print(diff)
-
     if not diff.strip():
         return f"✅ No significant changes detected in {file_path}."
 
