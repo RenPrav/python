@@ -73,7 +73,6 @@ def commit_feedback(feedback_text):
             f.write(feedback_text)
 
         repo.git.add(feedback_file)
-        repo.index.commit("Automated commit: Updated AI-generated feedback")
         print("✅ Feedback committed.")
 
     except Exception as e:
