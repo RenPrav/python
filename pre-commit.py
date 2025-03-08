@@ -85,6 +85,21 @@ def analyze_code_changes(file_path, commit_id, repo):
     
     provide the details with the file name,commit id,issues and suggestion in a structured and short format.
     """
+    
+    prompt = f"""
+    Given the diff of a file {file_path} and the commit ID
+    Check if the commit is introducing any security vulnerabilities, poor code quality, syntax errors, maintainability issues, Logic & Best Practices, etc
+    
+    # Instructions
+    - Provice concise response. ONLY Respond if there is an issue detected
+    - If no issues are detected, respond with No Issues.
+    - Always start with file path and commit ID and then your concise response.
+    - Donot exceed more thatn 100 words
+    
+    ```diff
+    {diff}
+    ```
+    """
 
     response = client.chat.completions.create(
         model=deployment,
