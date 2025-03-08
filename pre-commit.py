@@ -35,6 +35,8 @@ def analyze_code_changes(file_path, commit_id):
     new_code = get_new_version(file_path)
 
     diff = ''.join(difflib.unified_diff(old_code, new_code, lineterm=''))
+    
+    print(diff)
 
     if not diff.strip():
         return f"✅ No significant changes detected in {file_path}."
@@ -123,7 +125,7 @@ def main():
     )
 
     print("\n=== AI Code Review Feedback ===")
-    print(feedback_summary)
+    # print(feedback_summary)
 
     commit_feedback(feedback_summary)
     print("feedback is pushed back to the repository.")
