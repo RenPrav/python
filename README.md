@@ -1,4 +1,4 @@
-`**GitSense: AI-Powered Code Review Assistant**`   ![image](https://github.com/user-attachments/assets/7dd8186e-ab12-4d49-ba25-196c87176363)
+`GitSense: AI-Powered Code Review Assistant`   ![image](https://github.com/user-attachments/assets/7dd8186e-ab12-4d49-ba25-196c87176363)
 
 **Overview**
 
