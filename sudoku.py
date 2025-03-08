@@ -1,7 +1,4 @@
-#Created by @sarthak1905
-#Author Name-Sarthak Saxena
-#Dated 4th May,2020
-#Contact me on GitHub if you find any glitches or have any recommendations!
+
 
 import numpy as np
 import random
