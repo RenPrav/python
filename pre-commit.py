@@ -73,6 +73,8 @@ def analyze_code_changes(file_path, commit_id):
     
     7.check for time complexity and space complexity.
     
+    Only respond with any recognised vulnerabilities. ONLY ADD NECESSSARY VULNERABILITIES.
+    
     Also, evaluate if the changes improve the code quality and if any vulnerability were detected only then provide a summary otherwise respond " NO ISSUES ".
     KEEP IT SHORT 
     
