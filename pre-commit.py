@@ -89,7 +89,7 @@ def commit_feedback(feedback_text):
 
         feedback_path = os.path.join(repo_path, feedback_file)
         with open(feedback_path, "a", encoding="utf-8") as f:
-            f.write(feedback_text + "\n\n")
+            f.write(feedback_text + "\n\n-------------------------------------------------------------\n\n")
 
         repo.git.add(feedback_file)
         print("✅ Feedback committed.")
