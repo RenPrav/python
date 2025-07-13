@@ -154,7 +154,7 @@ def main():
         Unsolved_Board=board.copy()
         Play_Sudoku(Solved_Board,Unsolved_Board)
     else:
-        print("The board is not possible!")
+        print("The board is not possible!!")
     return
 
 

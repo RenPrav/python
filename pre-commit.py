@@ -1,20 +1,12 @@
 import difflib
 import git
 import os
-from openai import AzureOpenAI
+from google import genai
 
 repo_path = os.path.dirname(os.path.abspath(__file__))
 feedback_file = "feedback.md"
 
-SECRET_KEY = os.environ.get('AZURE_KEY')
-endpoint = os.environ.get('END_POINT')
-deployment = "gpt-4o"
-
-client = AzureOpenAI(
-    azure_endpoint=endpoint,
-    api_key=SECRET_KEY,
-    api_version="2024-10-21",
-)
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
 def get_previous_version(file_path):
     try:
@@ -101,12 +93,12 @@ def analyze_code_changes(file_path, commit_id, repo):
     ```
     """
 
-    response = client.chat.completions.create(
-        model=deployment,
-        messages=[{"role": "user", "content": prompt}]
+    response = client.models.generate_content(
+        model="gemini-2.0-flash",
+        contents=[{"text": prompt}]
     )
-
-    return response.choices[0].message.content
+    return response.candidates[0].content.parts[0].text
+    
 
 def commit_feedback(feedback_text):
     try:
