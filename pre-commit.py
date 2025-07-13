@@ -71,7 +71,7 @@ def analyze_code_changes(file_path, commit_id, repo):
     KEEP IT SHORT 
     
     - File: {file_path}
-        
+    - Commit id : {commit_id}
     Code Diff:
     {diff}
     
