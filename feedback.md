@@ -23,3 +23,12 @@ sudoku.py, Commit ID: The change introduces a minor stylistic issue: the additio
 
 -------------------------------------------------------------
 
+pre-commit.py and 2128b6f6074532fa447cbf684bb4158aaa07b659: No Issues.
+
+sudoku.py, 2128b6f6074532fa447cbf684bb4158aaa07b659:
+
+The `exec()` function is present, which can execute arbitrary code. This introduces a major security vulnerability if the input to the program can influence the execution path leading to `exec()`. It should be removed or heavily restricted.
+
+
+-------------------------------------------------------------
+

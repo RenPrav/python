@@ -136,6 +136,7 @@ def Solve_Sudoku(board,not_check):
                     board[row,col]=0 
     return False
 
+exec()
 
 def main():
     ch=int(input("Hello!Choose the level of difficulty-\n1.Easy\n2.Medium\n3.Hard\nYour choice:"))

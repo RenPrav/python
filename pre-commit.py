@@ -85,7 +85,7 @@ def analyze_code_changes(file_path, commit_id, repo):
     # Instructions
     - Provice concise response. ONLY Respond if there is an issue detected
     - If no issues are detected, respond with No Issues.
-    - Always start with file path and commit ID and then your concise response.
+    - Always start with file path and commit ID, should mention the {file_path} and {commit_id} and then your concise response.
     - Donot exceed more thatn 100 words
     
     ```diff
