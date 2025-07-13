@@ -37,3 +37,20 @@ pre-commit.py, 483c6ecab1ed2e9a67482d6558384a2da2dafd1b: Dead code (commented-ou
 
 -------------------------------------------------------------
 
+**File:** sudoku.py
+**Commit ID:** 2af9b38801a758b709bb3a46e247aa6fe0e0c99b
+
+**Issues:**
+
+*   **Code Injection:** The `exec()` function is used without proper sanitization, allowing for arbitrary code execution.
+*   **Maintainability:** Duplicate `exec()` calls are present.
+*   **Syntax Errors:** duplicate exec()
+
+**Suggestion:** Remove the `exec()` calls or sanitize the input to prevent code injection.
+
+**Summary:** Duplicate `exec()` calls.
+
+
+
+-------------------------------------------------------------
+
