@@ -32,3 +32,8 @@ The `exec()` function is present, which can execute arbitrary code. This introdu
 
 -------------------------------------------------------------
 
+pre-commit.py, 483c6ecab1ed2e9a67482d6558384a2da2dafd1b: Dead code (commented-out prompt variable).
+
+
+-------------------------------------------------------------
+
