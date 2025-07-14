@@ -20,3 +20,8 @@ Suggestion: Remove the `Evil` class or refactor the `__eq__` method to avoid usi
 
 -------------------------------------------------------------
 
+NO ISSUES
+
+
+-------------------------------------------------------------
+
