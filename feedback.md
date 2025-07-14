@@ -12,3 +12,11 @@ Suggestion: Remove the `Evil` class and the `exec` statement.
 
 -------------------------------------------------------------
 
+File: sudoku.py
+Commit ID: 570260544b2701150bb3379176949c96efbee081
+Issues: Code Injection (via `exec` in the `Evil` class `__eq__` method).
+Suggestion: Remove the `Evil` class or refactor the `__eq__` method to avoid using `exec`.
+
+
+-------------------------------------------------------------
+
