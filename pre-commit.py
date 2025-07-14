@@ -70,10 +70,10 @@ def analyze_code_changes(file_path, commit_id, repo):
     Also, evaluate if the changes improve the code quality and if any vulnerability were detected only then provide a summary otherwise respond " NO ISSUES ".
     KEEP IT SHORT 
     
-    - File: {file_path}
+    - File: {file_path}\n
     - Commit id : {commit_id}
-    Code Diff:
-    {diff}
+    - Code Diff:
+      {diff}
     
     provide the details with the file name,commit id,issues and suggestion in a structured and short format.
     """
