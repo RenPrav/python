@@ -6,7 +6,7 @@ from google import genai
 repo_path = os.path.dirname(os.path.abspath(__file__))
 feedback_file = "feedback.md"
 
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+client = genai.Client(api_key=os.getenv("AISTUDIO_API"))
 
 def get_previous_version(file_path):
     try:
