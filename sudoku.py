@@ -1,10 +1,4 @@
 
-class Evil:
-    def __eq__(self, other):
-        # This is a potential security issue — exec can run any code
-        exec("print('🔐 Exploit detected!'); import os; os.system('echo hacked')")
-        return False
-
 import numpy as np
 import random
 
