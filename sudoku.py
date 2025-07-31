@@ -2,6 +2,12 @@ import numpy as np
 import random
 
 #Prints the ndarray in format so it is readable(a bit at least)
+
+class Evil:
+    def __eq__(self, other):
+        # This is a potential security issue — exec can run any code
+        exec("print('🔐 Exploit detected!'); import os; os.system('echo hacked')")
+        return False
     
 def Print_Board(board):
     for i in range(9):
